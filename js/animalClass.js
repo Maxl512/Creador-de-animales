@@ -93,21 +93,18 @@ class Cow extends Animal{
     };
 };
 
-const showAnimalInfo = () =>{
-    let htmlCode = 
-    `
-    <tr class="animal-info__info">
-        <td>Ju</td>
-        <td><button onclick="showAnimalDescription(this, this.textContent);">Ver info</button></td>
-        <td>450kg</td>
-        <td>Rojo</td>
-        <td>15/04/2000</td>
-        <td>21</td>
-        <td>Vaca</td>
-        <td>Manso</td>
-    </tr>
-    `;
+const showAnimalInfo = (button, aniName) =>{
+    console.log(button + " " + aniName);
+    let infoRow = document.querySelector("#animal-info");
+
+    console.log(infoRow.children[0]);
 };
+
+// Tienes que hacer que busque entre todos los animales, dependiendo
+// del tipo de animal, en que array buscara. Luego buscar el animal
+// con el mismo nombre y caracteristicas que el seleccionaod y asi
+// mostrar sus datos en pantalla.
+
 
 const addAnimalToList = () =>{
     let htmlCode =

@@ -19,7 +19,7 @@
             flex-wrap: wrap;
 
             background: linear-gradient(to bottom, #0b5, #050);
-            padding: 5vh 5vw;
+            padding: 5vh 3vw;
         }
         .animal-creator-container{
             flex-basis: 40%;
@@ -30,7 +30,7 @@
             border-radius: 10%;
 
             color: #cf7;
-            padding: 5%;
+            padding: 2% 5%;
         }
         .animal-creator-container__title{
             text-align: center;
@@ -64,7 +64,7 @@
             color: #ddd;
         }
         .input-container-groupThree{
-            flex-basis: 33%;
+            flex-basis: 28%;
             margin: 2% 0%;
         }
         .input-container-groupThree > label{
@@ -131,6 +131,12 @@
             border: none;
             border-radius: 5px;
         }
+        .visualizer{
+            flex-basis: 58%;
+            background: linear-gradient(to bottom, #33f, #66f, #3f3 , #0a0, #070, #050 ,#333, #000);
+            margin: 0% 1%;
+            border: 5px inset #fff;
+        }
     </style>
 </head>
 <body>
@@ -139,51 +145,53 @@
             <h1 class="animal-creator-container__title">Creador de Animales</h1>
             <form class="animal-creator-container__form" action="#">
                 <div class="input-container-text">
-                    <label for="">Nombre:</label>
-                    <input placeholder="¿Como llamaras al animal?" type="text">
+                    <label for="animal-name">Nombre:</label>
+                    <input id="animal-name" placeholder="¿Como llamaras al animal?" type="text">
                 </div>
                 <div class="input-container-text">
-                    <label for="">Descripcion:</label>
-                    <textarea placeholder="Escribe la descripcion del animal" rows="5" ></textarea>
+                    <label for="animal-description">Descripcion:</label>
+                    <textarea id="animal-description" placeholder="Escribe la descripcion del animal" rows="5" ></textarea>
                 </div>
                 <div class="input-container-groupThree">
-                    <label for="">Peso</label>
-                    <input placeholder="¿Cuanto pesa?" type="number">
+                    <label for="animal-weight">Peso</label>
+                    <input id="animal-weight" type="number">
                 </div>
                 <div class="input-container-groupThree">
-                    <label for="">Color</label>
-                    <input type="color">
+                    <label for="animal-color">Color</label>
+                    <input id="animal-color" type="color">
                 </div>
                 <div class="input-container-groupThree">
-                    <label for="">Fecha de nacimiento</label>            
-                    <input type="date">
+                    <label for="animal-birthday">Nacimiento</label>            
+                    <input id="animal-birthday" type="date">
                 </div>
                 <div class="input-container-groupTwo">
-                    <label for="">¿Que animal es?</label>
-                    <select name="" id="">
-                        <option value="">Perro</option>
-                        <option value="">Gato</option>
-                        <option value="">Conejo</option>
-                        <option value="">Raton</option>
-                        <option value="">Culebra</option>
-                        <option value="">Cerdito</option>
-                        <option value="">Vaca</option>
-                        <option value="">Gato</option>
+                    <label for="animal-type">¿Que animal es?</label>
+                    <select id="animal-type">
+                        <option value="dog">Perro</option>
+                        <option value="cat">Gato</option>
+                        <option value="rabbit">Conejo</option>
+                        <option value="mouse">Raton</option>
+                        <option value="snake">Culebra</option>
+                        <option value="mini-pig">Cerdito</option>
+                        <option value="cow">Vaca</option>
                     </select>
                 </div>
                 <div class="input-container-groupTwo">
-                    <label for="">Personalidad</label>
-                    <select name="" id="">
-                        <option value="">Manso</option>
-                        <option value="">Agresivo</option>
-                        <option value="">Desordenado</option>
+                    <label for="animal-personality">Personalidad</label>
+                    <select id="animal-personality">
+                        <option value="meek">Manso</option>
+                        <option value="aggressive">Agresivo</option>
                     </select>
                 </div>
                 <input class="button-submit" type="submit" value="Crear">
             </form>
         </div>
 
-        <div class="visualizer"></div>
+        <div class="visualizer">
+
+            
+
+        </div>
     </div>
 
 

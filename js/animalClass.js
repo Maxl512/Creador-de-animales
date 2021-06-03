@@ -4,7 +4,6 @@ let animalWeight = document.querySelector("#animal-weight");
 let animalColor = document.querySelector("#animal-color");
 let animalBirth = document.querySelector("#animal-birthday");
 let animalType = document.querySelector("#animal-type");
-
 let dogsList = document.querySelector("#dogs-list");
 let catsList = document.querySelector("#cats-list");
 let rabbitsList = document.querySelector("#rabbits-list");
@@ -12,16 +11,9 @@ let mousesList = document.querySelector("#mouses-list");
 let snakesList = document.querySelector("#snakes-list");
 let minipigsList = document.querySelector("#minipigs-list");
 let cowsList = document.querySelector("#cows-list");
-
 let buttonSubmit = document.querySelector("#animal-button-submit");
-
 let animalImage = document.querySelector("#animal-image");
-
-let todayDate = new Date().getFullYear();
-console.log(todayDate + " " + animalBirth);
-
 let animals = [[], [], [], [], [], [], []];
-
 class Animal {
     constructor(name, des, weight, color, birth, type){
         this.name = name;
@@ -98,7 +90,6 @@ class Cow extends Animal{
 const showAnimalDescription = (button) =>{
     let typeAnimal = button.getAttribute("animaltype");
     let nameAnimal = button.getAttribute("animalname");
-
     switch(typeAnimal){
         case "dog":
             for (animal in animals[0]) {
@@ -107,15 +98,13 @@ const showAnimalDescription = (button) =>{
                 };
             };
         break;
-
         case "cat":
             for (animal in animals[1]) {
                 if(animals[1][animal].name == nameAnimal){
                     alert(animals[1][animal].des);
                 };
             };
-        break;
-        
+        break; 
         case "rabbit":
             for (animal in animals[2]) {
                 if(animals[2][animal].name == nameAnimal){
@@ -123,7 +112,6 @@ const showAnimalDescription = (button) =>{
                 };
             };
         break;
-
         case "mouse":
             for (animal in animals[3]) {
                 if(animals[3][animal].name == nameAnimal){
@@ -131,7 +119,6 @@ const showAnimalDescription = (button) =>{
                 };
             };
         break;
-
         case "snake":
             for (animal in animals[4]) {
                 if(animals[4][animal].name == nameAnimal){
@@ -139,7 +126,6 @@ const showAnimalDescription = (button) =>{
                 };
             };
         break;
-
         case "mini-pig":
             for (animal in animals[5]) {
                 if(animals[5][animal].name == nameAnimal){
@@ -147,7 +133,6 @@ const showAnimalDescription = (button) =>{
                 };
             };           
         break;
-
         case "cow":
             for (animal in animals[6]) {
                 if(animals[6][animal].name == nameAnimal){
@@ -159,9 +144,7 @@ const showAnimalDescription = (button) =>{
 };
 const showAnimal = (button, aniName) =>{
     let typeAnimal = button.getAttribute("animalType");
-
     let infoRow = document.querySelector("#animal-info");
-
     let nameOfAnimal = infoRow.children[0];
     let infoOfAnimal = infoRow.children[1];
     let weightOfAnimal = infoRow.children[2];
@@ -169,7 +152,6 @@ const showAnimal = (button, aniName) =>{
     let birthdayOfAnimal = infoRow.children[4];
     let ageOfAnimal = infoRow.children[5];
     let typeOfAnimal = infoRow.children[6];
-
     switch(typeAnimal){
         case "dog":
             for (animal in animals[0]) {
@@ -201,6 +183,7 @@ const showAnimal = (button, aniName) =>{
                     infoOfAnimal.firstElementChild.setAttribute("animaltype", animals[1][animal].type);
                     let age = new Date().getFullYear() - new Date(animals[1][animal].birth).getFullYear();
                     ageOfAnimal.innerHTML = age;
+                    animalImage.setAttribute("src", `images/cats/${animals[1][animal].color}.png`);
                 };
             };
         break;
@@ -217,6 +200,7 @@ const showAnimal = (button, aniName) =>{
                     infoOfAnimal.firstElementChild.setAttribute("animaltype", animals[2][animal].type);
                     let age = new Date().getFullYear() - new Date(animals[2][animal].birth).getFullYear();
                     ageOfAnimal.innerHTML = age;                    
+                    animalImage.setAttribute("src", `images/rabbits/${animals[2][animal].color}.png`);
                 };
             };
         break;
@@ -233,6 +217,7 @@ const showAnimal = (button, aniName) =>{
                     infoOfAnimal.firstElementChild.setAttribute("animaltype", animals[3][animal].type);
                     let age = new Date().getFullYear() - new Date(animals[3][animal].birth).getFullYear();
                     ageOfAnimal.innerHTML = age;
+                    animalImage.setAttribute("src", `images/mouses/${animals[3][animal].color}.png`);
                 };
             };
         break;
@@ -249,6 +234,7 @@ const showAnimal = (button, aniName) =>{
                     infoOfAnimal.firstElementChild.setAttribute("animaltype", animals[4][animal].type);
                     let age = new Date().getFullYear() - new Date(animals[4][animal].birth).getFullYear();
                     ageOfAnimal.innerHTML = age;
+                    animalImage.setAttribute("src", `images/snakes/${animals[4][animal].color}.png`);
                 };
             };
         break;
@@ -265,6 +251,7 @@ const showAnimal = (button, aniName) =>{
                     infoOfAnimal.firstElementChild.setAttribute("animaltype", animals[5][animal].type);
                     let age = new Date().getFullYear() - new Date(animals[5][animal].birth).getFullYear();
                     ageOfAnimal.innerHTML = age;
+                    animalImage.setAttribute("src", `images/minipigs/${animals[5][animal].color}.png`);
                 };
             };
         break;
@@ -281,19 +268,14 @@ const showAnimal = (button, aniName) =>{
                     infoOfAnimal.firstElementChild.setAttribute("animaltype", animals[6][animal].type);
                     let age = new Date().getFullYear() - new Date(animals[6][animal].birth).getFullYear();
                     ageOfAnimal.innerHTML = age;
+                    animalImage.setAttribute("src", `images/cows/${animals[6][animal].color}.png`);
                 };
             };
         break;
-    }
+    };
 };
-
-
 const addAnimalToList = () =>{
-    let htmlCode =
-    `
-    <button onclick="showAnimal(this, this.textContent);" animalType="${animalType.value}">${animalName.value}</button>
-    `;
-
+    let htmlCode =`<button onclick="showAnimal(this, this.textContent);" animalType="${animalType.value}">${animalName.value}</button>`;
     switch(animalType.value){
         case "dog":
             dogsList.innerHTML += htmlCode;
@@ -324,7 +306,6 @@ const addAnimalToList = () =>{
         break;
     };
 };
-
 function validateName(){
     switch(animalType.value){
         case "dog"    :
@@ -400,16 +381,15 @@ function validateName(){
     }
     return false;
 };
-
 function getError(){
     let error = [];
-
+    let birthday = new Date(animalBirth.value);
+    let birthYear = new Date(animalBirth.value).getFullYear();
     if(animalName.value.length < 4 || animalName.value.length > 16){
         error[0] = true;
         error[1] = "El nombre debe estar entre 4 y 16 caracteres";
         return error;
     };
-    
     if(animalDes.value.length == 0 || animalDes.value.length > 600){
         error[0] = true;
         error[1] = "La descripcion debe ser entre 0 y 600 caracteres";
@@ -425,16 +405,23 @@ function getError(){
         error[1] = "No has especificado su fecha de nacimiento";
         return error;
     };
+    if(birthYear < 1970){
+        error[0] = true;
+        error[1] = "Ese animal ya esta muerto si nacio en esa fecha";
+        return error;
+    };
+    if(birthday > new Date()){
+        error[0] = true;
+        error[1] = "Ese animal no puede haber nacido todavia";
+        return error;
+    }
     error[0] = false;
     error[0] = validateName();
     return error;
 }; 
-
 buttonSubmit.addEventListener("click", (e) => {
     e.preventDefault();
-
     let error = getError();
-
     if(error[0] && error[1] == undefined){
         return false;
     } else if(error[0]){
@@ -476,11 +463,6 @@ buttonSubmit.addEventListener("click", (e) => {
                 animals[6].push(cow);
             break;
         };
-
         addAnimalToList();
-
-        console.log(animals);
     };
 });
-
-

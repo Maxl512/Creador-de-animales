@@ -20,15 +20,21 @@
                     <label for="animal-description">Descripcion:</label>
                     <textarea id="animal-description" placeholder="Escribe la descripcion del animal" rows="5" ></textarea>
                 </div>
-                <div class="input-container-groupThree">
+                <div class="input-container-groupTwo">
                     <label for="animal-weight">Peso</label>
                     <input id="animal-weight" type="number">
                 </div>
-                <div class="input-container-groupThree">
+                <div class="input-container-groupTwo">
                     <label for="animal-color">Color</label>
-                    <input id="animal-color" type="color">
+                    <select id="animal-color">
+                        <option value="white">Blanco</option>
+                        <option value="black">Negro</option>
+                        <option value="brown">Marron</option>
+                        <option value="pink">Rosado</option>
+                        <option value="yellow">Amarillo</option>
+                    </select>
                 </div>
-                <div class="input-container-groupThree">
+                <div class="input-container-groupTwo">
                     <label for="animal-birthday">Nacimiento</label>            
                     <input id="animal-birthday" type="date">
                 </div>
@@ -42,13 +48,6 @@
                         <option value="snake">Culebra</option>
                         <option value="mini-pig">Cerdito</option>
                         <option value="cow">Vaca</option>
-                    </select>
-                </div>
-                <div class="input-container-groupTwo">
-                    <label for="animal-personality">Personalidad</label>
-                    <select id="animal-personality">
-                        <option value="meek">Manso</option>
-                        <option value="aggressive">Agresivo</option>
                     </select>
                 </div>
                 <input id="animal-button-submit" class="button-submit" type="submit" value="Crear">
@@ -65,12 +64,10 @@
                         <th>Nacimiento</th>
                         <th>Edad</th>
                         <th>Tipo</th>
-                        <th>Personalidad</th>
                     </thead>
                     <tr id="animal-info" class="animal-info__info">
                         <td></td>
-                        <td><button onclick="showAnimalDescription(this, this.textContent);">Ver info</button></td>
-                        <td></td>
+                        <td><button onclick="showAnimalDescription(this);"></button></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -78,6 +75,11 @@
                         <td></td>
                     </tr>
                 </table>
+
+                <div class="animal-image">
+                    <img id="animal-image" src="images/dogs/black.png" alt="Elije un animal para mostrarlo">
+                </div>
+
             </div>
             <div class="visualizer__interfaz">
                 <div class="visualizer__interfaz-option">Perros

@@ -174,8 +174,10 @@
         background-color: #fff;
     }
     .animal-image > img{
-        margin: 10% 10%;
+        width: 40%;
+        margin: 10% 30%;
         object-fit: contain;
+        object-position: center;
     }
     .animal-info{
         width: 100%;
@@ -375,8 +377,10 @@
         background-color: #fff;
     }
     .animal-image > img{
-        margin: 10% 33%;
+        width: 40%;
+        margin: 10% 30%;
         object-fit: contain;
+        object-position: center;
     }
     .animal-info{
         width: 100%;
@@ -581,8 +585,10 @@
         background-color: #fff;
     }
     .animal-image > img{
-        margin: 10% 33%;
+        width: 40%;
+        margin: 10% 30%;
         object-fit: contain;
+        object-position: center;
     }
     .animal-info{
         width: 100%;
